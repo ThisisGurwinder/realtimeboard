@@ -11,11 +11,24 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <BasicSvg />
+          <BasicSvg />
         </p>
       </div>
     );
   }
 }
+
+const BasicSvg = () =>
+  <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <circle
+      cx="50"
+      cy="50"
+      r="40"
+      stroke="blue"
+      strokeWidth="4"
+      fill="lightblue"
+    />
+  </svg>;
 
 export default App;
