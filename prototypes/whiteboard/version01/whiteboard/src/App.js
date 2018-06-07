@@ -29,6 +29,6 @@ const BasicSvg = () =>
       strokeWidth="4"
       fill="lightblue"
     />
-  </svg>
+  </svg>;
 
 export default App;
