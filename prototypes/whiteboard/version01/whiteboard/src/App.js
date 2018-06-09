@@ -1,34 +1,35 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Graph from "./components/graph.js";
 
-class App extends Component {
+export default class App extends React.Component {
+  state = {dataSetIndex: 0}
+
+  selectDataset(event) {
+    this.setState({
+      dataSetIndex: event.target.value
+    });
+  }
+
   render() {
+    let options = this.props.datasets.map((_, index) => {
+
+      return <option key={index} value={index}>
+                Dataset {index+1}
+             </option>;
+    });
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          <BasicSvg />
-          <BasicSvg />
-        </p>
+      <div>
+        <select
+          value={this.state.dataSetIndex}
+          onChange={this.selectDataset.bind(this)} >
+          {options}
+        </select>
+
+        <Graph data={this.props.datasets[this.state.dataSetIndex]} />
       </div>
     );
   }
 }
-
-const BasicSvg = () =>
-  <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-    <circle
-      cx="50"
-      cy="50"
-      r="40"
-      stroke="blue"
-      strokeWidth="4"
-      fill="lightblue"
-    />
-  </svg>;
-
-export default App;
