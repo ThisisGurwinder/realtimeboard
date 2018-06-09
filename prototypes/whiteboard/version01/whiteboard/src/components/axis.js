@@ -15,7 +15,7 @@ export default class Axis extends React.Component {
 		{
             coords.x2 = coords.x1;
             coords.y2 = coords.y1 + this.props.length;
- 		}
+		}
 
         return coords;
 	}
