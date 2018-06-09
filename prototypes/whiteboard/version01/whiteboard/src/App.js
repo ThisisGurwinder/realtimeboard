@@ -17,7 +17,7 @@ export default class App extends React.Component {
 
       return <option key={index} value={index}>
                 Dataset {index+1}
-             </option>
+             </option>;
     });
 
     return (
@@ -30,6 +30,6 @@ export default class App extends React.Component {
 
         <Graph data={this.props.datasets[this.state.dataSetIndex]} />
       </div>
-    )
+    );
   }
 }

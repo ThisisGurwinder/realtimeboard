@@ -30,6 +30,6 @@ export default class Graph extends React.Component {
 					data={this.props.data}
 				/>
 			</svg>
-		)
+		);
 	}
 }
