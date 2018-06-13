@@ -128,7 +128,7 @@ class RainbowCanvas extends React.Component {
 
 		if(name === "minWidth" || name === "maxWidth") {
 			this.ctx().lineWidth = Number(this.state.minWidth)+1;
-			console.log(`Priting Ctx => LineWidth (${this.ctx().lineWidth})`);
+			console.log(`Printing Ctx => LineWidth (${this.ctx().lineWidth})`);
 		}
 
 		if(name === "customeStroke" && value === true) {
