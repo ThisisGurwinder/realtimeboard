@@ -30,7 +30,7 @@ export default class App extends React.Component {
         </select>
 
         <Graph data={this.props.datasets[this.state.dataSetIndex]} />
-    		<RainbowCanvas fullscreen={true} width="500" height="500" />
+        <RainbowCanvas fullscreen={true} width="500" height="500" />
       </div>
     );
   }
