@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Graph from "./components/graph.js";
+import RainbowCanvas from "./samples/rainbow_canvas.js";
 
 export default class App extends React.Component {
   state = {dataSetIndex: 0}
@@ -29,6 +30,7 @@ export default class App extends React.Component {
         </select>
 
         <Graph data={this.props.datasets[this.state.dataSetIndex]} />
+    		<RainbowCanvas fullscreen={true} width="500" height="500" />
       </div>
     );
   }
