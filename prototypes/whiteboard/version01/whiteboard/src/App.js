@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Graph from "./components/graph.js";
-import AxisSampleOne from "./samples/AxisSample1.js"
+import AxisSampleOne from "./samples/AxisSample1.js";
 
 export default class App extends React.Component {
   state = {dataSetIndex: 0}
