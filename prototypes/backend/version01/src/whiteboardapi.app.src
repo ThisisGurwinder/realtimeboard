@@ -1,0 +1,13 @@
+{application, whiteboardapi,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  cowboy
+                 ]},
+  {mod, { whiteboardapi_app, []}},
+  {env, []}
+ ]}.

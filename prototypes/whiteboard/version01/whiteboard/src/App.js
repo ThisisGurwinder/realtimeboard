@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Graph from "./components/graph.js";
-import RainbowCanvas from "./samples/rainbow_canvas.js";
+import AxisSampleOne from "./samples/AxisSample1.js";
 
 export default class App extends React.Component {
   state = {dataSetIndex: 0}
@@ -23,14 +23,7 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <select
-          value={this.state.dataSetIndex}
-          onChange={this.selectDataset.bind(this)} >
-          {options}
-        </select>
-
-        <Graph data={this.props.datasets[this.state.dataSetIndex]} />
-        <RainbowCanvas fullscreen={true} width="500" height="500" />
+        <AxisSampleOne fullscreen={true} width="500" height="500" />
       </div>
     );
   }
