@@ -7,7 +7,7 @@
 			handle_info/2,
 			handle_cast/2,
 			terminate/2,
-			code_change/3,
+			code_change/3
 			]).
 -export([start_http/1]).
 

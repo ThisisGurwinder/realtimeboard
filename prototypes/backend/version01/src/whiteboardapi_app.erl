@@ -10,7 +10,8 @@
 %% ===================================================================
 
 start(_StartType, _StartArgs) ->
-    whiteboardapi_app:start_link().
+    whiteboardapi_sup:start_link(),
+    whiteboardapi_http:start_link().
 
 stop(_State) ->
     ok.
