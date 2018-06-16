@@ -11,9 +11,11 @@ export default class AxisSampleOne extends React.Component {
 			hue: 1,
 			direction: true,
 			lastX: 0,
-			lastY: 0
+			lastY: 0,
+			collectionOfPoints: []
 		},
 		this.draw = this.draw.bind(this)
+		this.sync = this.sync.bind(this)
 	}
 
 	canvas() {
@@ -52,9 +54,29 @@ export default class AxisSampleOne extends React.Component {
 			this.setState({
 				hue: hue,
 				lastX: e.nativeEvent.offsetX,
-				lastY: e.nativeEvent.offsetY
+				lastY: e.nativeEvent.offsetY,
+				collectionOfPoints: this.state.collectionOfPoints.concat([{
+									x: e.nativeEvent.offsetX, 
+									y: e.nativeEvent.offsetY,
+									synced: false
+								}])
 			})
 		}
+	}
+
+	sync() {
+		this.setState({
+			collectionOfPoints: this.state.collectionOfPoints.map(
+						function (collection) {
+							if(collection.synced == false) {
+								collection = collection.synced = true;
+								return collection;
+							} else {
+								return collection;
+							}
+						}
+					)
+		})
 	}
 
 	render() {
@@ -76,6 +98,10 @@ export default class AxisSampleOne extends React.Component {
 					} onMouseOut = {
 						() => this.setState({ isDrawing: false})
 					} style={canvasStyle} />
+
+				<button onClick={this.sync}> 
+					Sync
+				</button>
 			</div>
 		)
 	}

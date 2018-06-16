@@ -23,13 +23,6 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <select
-          value={this.state.dataSetIndex}
-          onChange={this.selectDataset.bind(this)} >
-          {options}
-        </select>
-
-        <Graph data={this.props.datasets[this.state.dataSetIndex]} />
         <AxisSampleOne fullscreen={true} width="500" height="500" />
       </div>
     );
